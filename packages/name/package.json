@@ -1,6 +1,6 @@
 {
     "name": "@example/name",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Provide a name",
     "author": "Guillaume CAMUS <guillaume.camus@gmail.com>",
     "homepage": "https://github.com/guiyomh/monorepo-yarn-lerna/blob/master/packages/name/README.md",

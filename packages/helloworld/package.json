@@ -1,6 +1,6 @@
 {
     "name": "@example/helloworld",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "> TODO: description",
     "author": "Guillaume CAMUS <guillaume.camus@gmail.com>",
     "homepage": "https://github.com/guiyomh/monorepo-yarn-lerna/blob/master/packages/helloworld/README.md",
@@ -28,8 +28,7 @@
         "test": "echo \"Error: run tests from root\" && exit 1"
     },
     "dependencies": {
-        "@example/hello": "^1.0.0",
-        "@example/name": "^1.0.0"
-    },
-    "devDependencies": {}
+        "@example/hello": "^1.0.1",
+        "@example/name": "^1.0.1"
+    }
 }
