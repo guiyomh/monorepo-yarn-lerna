@@ -1,0 +1,30 @@
+{
+    "name": "@example/hello",
+    "version": "1.0.0",
+    "description": "Says Hello {name}",
+    "author": "Guillaume CAMUS <guillaume.camus@gmail.com>",
+    "homepage": "https://github.com/guiyomh/monorepo-yarn-lerna/blob/master/packages/hello/README.md",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/guiyomh/monorepo-yarn-lerna.git",
+        "directory": "packages/hello"
+    },
+    "bugs": {
+        "url": "https://github.com/guiyomh/monorepo-yarn-lerna/issues"
+    },
+    "license": "MIT",
+    "main": "lib/hello.js",
+    "directories": {
+        "lib": "lib",
+        "test": "__tests__"
+    },
+    "files": [
+        "lib"
+    ],
+    "publishConfig": {
+        "registry": "http://localhost:4873"
+    },
+    "scripts": {
+        "test": "echo \"Error: run tests from root\" && exit 1"
+    }
+}

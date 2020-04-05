@@ -1,0 +1,67 @@
+{
+    "name": "root",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "engines": {
+        "node": ">=10.15.0",
+        "yarn": ">=1.5.1"
+    },
+    "scripts": {
+        "bootstrap": "lerna bootstrap --use-workspaces",
+        "build": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.spec.js,**/*.test.js",
+        "coverage": "jest --coverage",
+        "lint:js": "eslint . --ext .js --ignore-pattern lib --ignore-pattern node_modules",
+        "flow:check": "flow check",
+        "lint": "concurrently npm:lint:js  npm:flow:check",
+        "prettier": "prettier --write \"**/*.{js,json,md,yml}\"",
+        "lerna:publish": "lerna publish",
+        "test": "yarn build && yarn lint && yarn coverage",
+        "unit": "jest"
+    },
+    "husky": {
+        "hooks": {
+            "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+            "pre-commit": "lint-staged && flow check"
+        }
+    },
+    "lint-staged": {
+        "*.{js,json,md,yml}": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.8.4",
+        "@babel/core": "^7.9.0",
+        "@babel/preset-env": "7.7.7",
+        "@babel/preset-flow": "^7.9.0",
+        "@types/jest": "^25.2.1",
+        "babel-core": "7.0.0-bridge.0",
+        "babel-eslint": "^10.1.0",
+        "babel-jest": "24.9.0",
+        "babel-loader": "8.0.6",
+        "commitizen": "^4.0.3",
+        "concurrently": "^5.1.0",
+        "eslint": "6.8.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-flowtype": "^4.7.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-prettier": "^3.1.2",
+        "eslint-plugin-security": "^1.4.0",
+        "flow-bin": "^0.122.0",
+        "husky": "4.0.0",
+        "jest": "24.9.0",
+        "jest-haste-map": "24.9.0",
+        "jest-resolve": "24.9.0",
+        "lerna": "3.20.2",
+        "lint-staged": "9.5.0",
+        "prettier": "1.19.1"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    }
+}
