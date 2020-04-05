@@ -2,5 +2,14 @@
     "packages": ["packages/*"],
     "npmClient": "yarn",
     "useWorkspaces": true,
-    "version": "independent"
+    "version": "independent",
+    "command": {
+        "publish": {
+            "message": "chore(packages): release",
+            "conventionalCommits": true,
+            "npmClient": "yarn",
+            "registry": "http://localhost:4873/",
+            "verifyAccess": false
+        }
+    }
 }
